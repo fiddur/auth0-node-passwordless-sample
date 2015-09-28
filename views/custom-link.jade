@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h4 Login using a magic link sent via email, using your own custom UI
+  .enter-email
+    label Enter your email &nbsp;&nbsp;
+    input.email
+    br
+    br
+    button.btn.btn-default(onclick='sendEmail()') Send Email
+  
+  script.
+    var auth0 = new Auth0({
+      clientID: '#{env.AUTH0_CLIENT_ID}', 
+      domain: '#{env.AUTH0_DOMAIN}',
+      callbackURL: '#{env.AUTH0_CALLBACK_URL}' 
+    });
+    
+    function sendEmail(){
+      var email = $('input.email').val();
+      auth0.requestMagicLink({ email: email , send: 'link'}, function(err) {
+        if (err) {
+          alert('error sending e-mail: ' + err.error_description);
+          return;
+        }
+        // the request was successful and you should 
+        // receive the magic link in the specified email
+        alert('email sent!');
+      });
+    }

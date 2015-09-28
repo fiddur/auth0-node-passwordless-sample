@@ -1,0 +1,28 @@
+extends user-layout
+
+mixin description(label,val)
+  dt #{label}
+  dd #{val}
+
+block content
+  .panel.panel-default
+    .panel-heading 
+      img.img-circle.profile-image(src='#{user.picture}') 
+      |Profile 
+    .panel-body
+      dl.dl-horizontal
+        dt email
+        dd #{user.email} &nbsp;
+          if (user.email_verified)
+            span.label.label-success verified
+          else
+            span.label.label-danger not verified
+        +description('name',user.name)
+        +description('provider',provider)
+        +description('given_name',user.given_name)
+        +description('family_name',user.family_name)
+        +description('locale',user.locale)
+        +description('user_id',user.user_id)
+        +description('nickname',user.nickname)
+        +description('user_metadata',JSON.stringify(user.user_metadata,null,4))
+        +description('app_metadata',JSON.stringify(user.app_metadata,null,4))

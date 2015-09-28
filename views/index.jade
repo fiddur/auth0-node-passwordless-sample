@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  .row
+    .col-md-6
+      h4 Login using 
+        strong Lock Passwordless
+      br
+      button.btn.btn-default.btn-block(onclick='loginSMS()') Login with a one time code via sms
+      br
+      button.btn.btn-default.btn-block(onclick='loginEmailCode()') Login with a one time code via email
+      br
+      button.btn.btn-default.btn-block(onclick='loginEmailLink()') Login with a magic link via email
+    .col-md-6 
+      h4 Login using 
+        strong your own UI
+      br
+      a.btn.btn-default.btn-block(href='/custom/sms') Login with a one time code via sms
+      br
+      a.btn.btn-default.btn-block(href='/custom/email') Login with a one time code via email
+      br
+      a.btn.btn-default.btn-block(href='/custom/link') Login with a magic link via email
+        
+  script.
+
+    function loginSMS() {
+      var lock = new Auth0LockPasswordless('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}');
+      lock.sms( {callbackURL: '#{env.AUTH0_CALLBACK_URL}'} );
+    }
+
+    function loginEmailCode() {
+      var lock = new Auth0LockPasswordless('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}');
+      lock.emailcode( {callbackURL: '#{env.AUTH0_CALLBACK_URL}'} );
+    }
+
+    function loginEmailLink() {
+      var lock = new Auth0LockPasswordless('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}');
+      lock.magiclink( {callbackURL: '#{env.AUTH0_CALLBACK_URL}'} );
+    }
