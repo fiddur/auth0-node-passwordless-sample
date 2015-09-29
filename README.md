@@ -1,6 +1,23 @@
 # auth0-node-passwordless-sample
 
-This sample will show how to use passwordless authentication within a Node.js Regular Web App
+This sample will show how to use passwordless authentication within a Node.js Regular Web App.
+
+## Key Features
+
+Passwordless scenarios on this Regular Page App samples include:
+
+* Login with a **one time code** via **sms** using **Lock**
+* Login with a **one time code** via **email** using **Lock**
+* Login with a **magic link** via **email** using **Lock**
+* Login with a **one time code** via **sms** using your **own UI**
+* Login with a **one time code** via **email** using your **own UI**
+* Login with a **magic link** via **email** using your **own UI**
+
+You can read more about Passwordless Authentication on our [Doc's Site](https://auth0.com/docs/connections/passwordless), where you will find the complete Regular Web App tutorials for:
+
+* [Authenticate users with a one time code via SMS](https://auth0.com/docs/connections/passwordless/regular-web-app-sms)
+* [Authenticate users with a one time code via Email](https://auth0.com/docs/connections/passwordless/regular-web-app-email-code)
+* [Authenticate users with a magic link via Email](https://auth0.com/docs/connections/passwordless/regular-web-app-email-link)
 
 ## Install Locally
 
@@ -20,22 +37,7 @@ In order to run the example locally you would need to:
 
 ## Usage
 
-Go to http://localhost:3000 and press the button that corresponds to the feature you want to test. Available options include:
-
-* Login with a **one time code** via **sms** using **Lock**
-* Login with a **one time code** via **email** using **Lock**
-* Login with a **magic link** via **email** using **Lock**
-* Login with a **one time code** via **sms** using your **own UI**
-* Login with a **one time code** via **email** using your **own UI**
-* Login with a **magic link** via **email** using your **own UI**
-
-## Documentation
-
-You can refer to the [Passwordless Authentication Docs](https://auth0.com/docs/connections/passwordless) to get more information, and find the complete Regular Web App tutorials for:
-
-* [Authenticate users with a one time code via SMS](https://auth0.com/docs/connections/passwordless/regular-web-app-sms)
-* [Authenticate users with a one time code via Email](https://auth0.com/docs/connections/passwordless/regular-web-app-email-code)
-* [Authenticate users with a magic link via Email](https://auth0.com/docs/connections/passwordless/regular-web-app-email-link)
+Go to http://localhost:3000 and press the button that corresponds to the feature you want to try. Then follow the login instructions. Once you are logged in, you will see your profile details, and you can logout using the link on the top right corner.
 
 ## What is Auth0?
 
