@@ -5,6 +5,9 @@
   "repository": "git://github.com/auth0/auth0-node-passwordless-sample",
   "author": "Auth0",
   "license": "MIT",
+  "engines" : { 
+    "node" : ">=4.0.0" 
+  }, 
   "scripts": {
     "start": "node ./bin/www"
   },
