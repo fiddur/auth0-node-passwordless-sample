@@ -1,0 +1,31 @@
+extends layout
+
+block scripts
+  script(src='https://cdn.auth0.com/w2/auth0-6.7.js')
+
+block content
+  h4 Login using Guardian, using your own custom UI
+  .enter-username
+    label Enter your username &nbsp;&nbsp;
+    input.username
+    br
+    br
+    button.btn.btn-default(onclick='login()') Login
+
+  script.
+    var auth0 = new Auth0({
+      clientID: '#{env.AUTH0_CLIENT_ID}',
+      domain: '#{env.AUTH0_DOMAIN}',
+      callbackURL: '#{env.AUTH0_CALLBACK_URL}'
+    });
+
+    function login(){
+      var username = $('input.username').val();
+
+      auth0.login({
+        connection: 'guardian',
+        // connection: 'google-oauth2',
+        login_hint: username,
+        // scope:      'openid',
+      })
+    };
