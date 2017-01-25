@@ -9,15 +9,18 @@ Passwordless scenarios on this Regular Page App samples include:
 * Login with a **one time code** via **sms** using **Lock**
 * Login with a **one time code** via **email** using **Lock**
 * Login with a **magic link** via **email** using **Lock**
+* Login with a **Guardian**  using **Lock**
 * Login with a **one time code** via **sms** using your **own UI**
 * Login with a **one time code** via **email** using your **own UI**
 * Login with a **magic link** via **email** using your **own UI**
+* Login with a **Guardian** using your **own UI**
 
 You can read more about Passwordless Authentication on our [Doc's Site](https://auth0.com/docs/connections/passwordless), where you will find the complete Regular Web App tutorials for:
 
 * [Authenticate users with a one time code via SMS](https://auth0.com/docs/connections/passwordless/regular-web-app-sms)
 * [Authenticate users with a one time code via Email](https://auth0.com/docs/connections/passwordless/regular-web-app-email-code)
 * [Authenticate users with a magic link via Email](https://auth0.com/docs/connections/passwordless/regular-web-app-email-link)
+* [Authenticate users with Guardian](https://auth0.com/docs/connections/passwordless/guardian)
 
 ## Install Locally
 

@@ -1,7 +1,7 @@
 extends layout
 
 block scripts
-  script(src='https://cdn.auth0.com/js/lock-passwordless-1.0.min.js')
+  script(src='https://cdn.auth0.com/js/lock-passwordless-2.3.min.js')
   
 block content
   .row
@@ -15,6 +15,8 @@ block content
       button.btn.btn-default.btn-block(onclick='loginEmailCode()') Login with a one time code via email
       br
       button.btn.btn-default.btn-block(onclick='loginEmailLink()') Login with a magic link via email
+      br
+      button.btn.btn-default.btn-block(onclick='loginGuardian()') Login with Guardian
     .col-md-6 
       h4 Login using 
         strong your own UI
@@ -44,3 +46,9 @@ block content
       var lock = new Auth0LockPasswordless('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}');
       lock.magiclink( {callbackURL: '#{env.AUTH0_CALLBACK_URL}'} );
     }
+
+    function loginGuardian() {
+      var lock = new Auth0LockPasswordless('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}');
+      lock.guardian( {callbackURL: '#{env.AUTH0_CALLBACK_URL}'} );
+    }
+
